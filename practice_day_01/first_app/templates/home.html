@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is firstapp's homepage  {{author}}</h1>
+
+    <h1>{{value | length}}</h1>
+    <h1>{{ age|add:"2" }}</h1>
+
+    <h1>{{ intro | addslashes }}</h1>
+    <h1>{{ author | capfirst }}</h1>
+    <h1>"{{ author | center:"10" }}"</h1>
+    <h1>{{ val | cut:" " }}</h1>
+    <h1>{{ birthdate | date:"D d M Y" }}</h1>
+    <h1>{{ x | default:"nothing" }}</h1>
+    <h1>{{ lst | dictsort:"name" }}</h1>
+    <h1>{{ age | divisibleby:"3" }}</h1>
+    <h1>{{ title | escape }}</h1>
+    <h1>{{ sum | filesizeformat }}</h1>
+    <h1>{{ value | first }}</h1>
+    <h1>{{ val | join:" // " }}</h1>
+    <h1>{{ value | last }}</h1>
+    <h1>{{ value | length }}</h1>
+    <h1>{{ num | linenumbers }}</h1>
+    <h1>{{ intro | lower }}</h1>
+    <h1>{{ author | make_list }}</h1>
+    <h1>{{ value | random }}</h1>
+    <h1>{{ value | slice:":2" }}</h1>
+    <h1>{{ birthdate | time:"H:i" }}</h1>
+    <h1>{{ post | title }}</h1>
+    <h1>{{ val | upper }}</h1>
+    <h1>{{ val | wordcount }}</h1>
+    <h1>{{ var | unordered_list }}</h1>
+</body>
+</html>
