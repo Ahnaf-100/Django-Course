@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* You can also use 'space-between' or 'space-evenly' */
+    }
+  
+    .card {
+    margin: 10px;
+    flex: 0 0 calc(33.33% - 20px); /* 20px for margins, adjust as needed */
+  }
+  </style>
+  
+<div class="card-container">
+  {% for i in meal %}
+    <div class="card" style="width: 18rem;">
+      <img src="{{ i.strMealThumb }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ i.strMeal }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
