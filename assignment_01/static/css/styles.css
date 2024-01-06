@@ -1,0 +1,10 @@
+.res1{
+    height: 500px;
+    width: 650px;
+}
+
+
+.home{
+    display: flex;
+    justify-content: space-around;
+}

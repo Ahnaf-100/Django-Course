@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<br><br>
+<div class='home'>
+    <div class="left-part">
+        <h1>Welcome to <span style="color: #ff4500;">Fusion Feastery</span></h1> <br>
+        <h6>If you are searching for the best quality Beef, Chicken, Pasta, Dessert and etc, you are at the right place. Please click on the show items in menu bar to see our items.</h6>
+    </div>
+
+    <div class="right-part">
+        <img class='res1' src="{% static 'images/res1.jpg' %}" alt="">
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static "css/styles.css" %}">
+
+{% endblock  %}
+
