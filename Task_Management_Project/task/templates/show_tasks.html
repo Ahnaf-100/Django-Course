@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 80%; display: flex; flex-wrap: wrap; padding: 10px; gap: 10px; margin: auto; justify-content: center">
+
+    {% for task in tasks %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.taskTitle }}</h5>
+          <p class="card-text">{{ task.taskDescription }}</p>
+          
+          {% if task.is_completed %}
+            <a class="btn btn-success" aria-disabled="true">Completed</a>
+          {% else %}
+            <div>
+                <a class="btn btn-warning" href="{% url 'edit_task' task.id %}">Edit</a>
+                <a class="btn btn-danger" href="{% url 'delete_task' task.id %}">Delete</a>
+
+                
+            </div>
+          {% endif %}
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
+
