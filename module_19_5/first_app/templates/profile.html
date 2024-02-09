@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+
+{% for m in messages %}
+
+<h1>{{m}}</h1><br><br><br>
+
+{% endfor %}
+
+{% endif %}
+
+<a href="{% url "pass_change1" %}" class="btn btn-primary">Change your password</a>
+
+
+{% endblock content %}
