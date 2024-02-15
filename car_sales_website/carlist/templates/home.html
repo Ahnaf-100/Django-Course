@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="d-flex flex-wrap p-auto m-auto align-items-center">
+    <div class="col-6 text "> <h2 class="ms-4 text-success">Welcome to CarMart. Here you can buy all your fancy cars.</h2> </div>
+    <div class="col-6 img "><img style="width:80%" class="ms-5" src="{% static "pexels-mike-bird-170811.jpg" %}" alt="some"></div>
+</div><br><br>
+
+<div>
+    <div style="list-style: none;" class=" ms-3  d-flex flex-wrap ">
+      {% for brand  in brands %}
+      
+      <a style="text-decoration:none; list-style: none;" class='btn btn-success mx-2' href="{% url "brand_wise_car" brand.slug %}">{{brand.name}}</a>
+    
+      
+      {% endfor %}
+    <br> <br> 
+    </div >
+    <br>
+          <h4 class="ms-4">Total car found : {{data | length}}</h4>
+        </div>
+    <div  class="ms-2 d-flex flex-wrap" style="justify-content-center">
+        {% for car in data %}
+    
+        <div class="col-sm-3 mb-3 mb-sm-0 mt-3 justify-content-center align-items-center ps-3">
+            <div class="card mx-2 px-5">
+              <div class="card-body justify-content-center align-items-center ps-3">
+               
+                <img class="card-img-top" src="{{car.image.url}}" alt="not found"><br>
+                <br>
+                <h5 class="card-title ">{{car.name}}</a></h5>
+                <p>Brand : {{car.brand}}</p>
+                <p>Price : ${{car.price}}</p>
+                <p>Quantity : {{car.quantity}}</p>
+                <h4><a class="text-decoration-none text-danger" href="{% url "detail_car" car.id %}">View Details</a></h4>
+                
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+   
+{% endblock content %}
+
+

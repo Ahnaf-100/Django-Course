@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+{% for m in messages %}
+<h1>{{m}}</h1>
+{% endfor %}
+{% endif %}
+
+<br><br>
+<h1>Order History</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                <p>Order ID: {{ order.id }}</p>
+                <p>Car Name: {{ order.car.name }}</p>
+                <p>Order Date: {{ order.order_date }}</p>
+                <!-- Add more details about the order as needed -->
+            </li>
+        {% empty %}
+            <li>No orders found.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
